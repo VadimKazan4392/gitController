@@ -10,7 +10,7 @@ const (
 	envLocal = "local"
 )
 
-func setLogger(env string) *slog.Logger {
+func SetLogger(env string) *slog.Logger {
 	var log *slog.Logger
 
 	switch env {
