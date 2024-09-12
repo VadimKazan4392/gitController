@@ -17,7 +17,8 @@ func main() {
 
 	r := router.GetRouter()
 	r.Get("/branches", handlers.GetList(logger))
-	r.Post("/set", handlers.SetBranch(logger))
+	r.Get("/set/{branch}", handlers.SetBranch(logger))
+	r.Get("/update", handlers.UpdateBranch(logger))
 
 	server := &http.Server{
 		Addr:         conf.HttpServer.Address,
